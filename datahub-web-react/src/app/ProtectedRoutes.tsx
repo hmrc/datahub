@@ -25,11 +25,11 @@ export const ProtectedRoutes = (): JSX.Element => {
             <Layout style={{ height: '100%', width: '100%' }}>
                 <Layout>
                     <Switch>
-                        <Route exact path="/" render={() => <HomePage />} />
+                        <Route exact path="/data-catalogue" render={() => <HomePage />} />
                         {entityRegistry.getEntities().map((entity) => (
                             <Route
                                 key={entity.getPathName()}
-                                path={`/${entity.getPathName()}/:urn`}
+                                path={`/data-catalogue/${entity.getPathName()}/:urn`}
                                 render={() => <EntityPage entityType={entity.type} />}
                             />
                         ))}

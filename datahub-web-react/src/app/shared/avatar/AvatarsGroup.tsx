@@ -30,7 +30,7 @@ export default function AvatarsGroup({ owners, entityRegistry, maxCount = 6, siz
                                 owner.owner.info?.email ||
                                 owner.owner.username
                             }
-                            url={`/${entityRegistry.getPathName(owner.owner.type)}/${owner.owner.urn}`}
+                            url={`/data-catalogue/${entityRegistry.getPathName(owner.owner.type)}/${owner.owner.urn}`}
                             photoUrl={owner.owner?.editableInfo?.pictureLink || undefined}
                         />
                     ) : (
@@ -38,9 +38,9 @@ export default function AvatarsGroup({ owners, entityRegistry, maxCount = 6, siz
                             <CustomAvatar
                                 size={size || 28}
                                 name={owner.owner.name}
-                                url={`/${entityRegistry.getPathName(owner.owner.type || EntityType.CorpGroup)}/${
-                                    owner.owner.urn
-                                }`}
+                                url={`/data-catalogue/${entityRegistry.getPathName(
+                                    owner.owner.type || EntityType.CorpGroup,
+                                )}/${owner.owner.urn}`}
                                 isGroup
                             />
                         )

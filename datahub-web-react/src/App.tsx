@@ -34,7 +34,7 @@ import { ContainerEntity } from './app/entity/container/ContainerEntity';
 /*
     Construct Apollo Client
 */
-const httpLink = createHttpLink({ uri: '/api/v2/graphql' });
+const httpLink = createHttpLink({ uri: '/data-catalogue/api/v2/graphql' });
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (networkError) {

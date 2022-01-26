@@ -68,7 +68,7 @@ export const MLFeatureTableProfile = ({ urn }: { urn: string }): JSX.Element => 
             {loading && <Message type="loading" content="Loading..." style={{ marginTop: '10%' }} />}
             {data && data.mlFeatureTable && (
                 <LegacyEntityProfile
-                    titleLink={`/${entityRegistry.getPathName(EntityType.MlfeatureTable)}/${urn}`}
+                    titleLink={`/data-catalogue/${entityRegistry.getPathName(EntityType.MlfeatureTable)}/${urn}`}
                     title={data.mlFeatureTable?.name || ''}
                     tabs={getTabs(data.mlFeatureTable as MlFeatureTable)}
                     header={getHeader(data.mlFeatureTable as MlFeatureTable)}

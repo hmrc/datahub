@@ -39,7 +39,7 @@ export function AdminHeaderLinks() {
         <>
             {showAnalytics && (
                 <AdminLink>
-                    <Link to="/analytics">
+                    <Link to="/data-catalogue/analytics">
                         <Button type="text">
                             <BarChartOutlined /> Analytics
                         </Button>
@@ -48,7 +48,7 @@ export function AdminHeaderLinks() {
             )}
             {showPolicyBuilder && (
                 <AdminLink>
-                    <Link to="/policies">
+                    <Link to="/data-catalogue/policies">
                         <Button type="text">
                             <BankOutlined /> Policies
                         </Button>
@@ -66,7 +66,7 @@ export function AdminHeaderLinks() {
             )}
             {showIdentityManagement && (
                 <AdminLink>
-                    <Link to="/identities">
+                    <Link to="/data-catalogue/identities">
                         <Button type="text">
                             <UsergroupAddOutlined /> Users & Groups
                         </Button>
@@ -84,7 +84,7 @@ export function AdminHeaderLinks() {
             )}
             {showSettings && (
                 <AdminLink>
-                    <Link to="/settings">
+                    <Link to="/data-catalogue/settings">
                         <Button type="text">
                             <SettingOutlined /> Settings
                         </Button>

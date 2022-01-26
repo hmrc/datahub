@@ -75,7 +75,7 @@ export const MLModelProfile = ({ urn }: { urn: string }): JSX.Element => {
             {loading && <Message type="loading" content="Loading..." style={{ marginTop: '10%' }} />}
             {data && data.mlModel && (
                 <LegacyEntityProfile
-                    titleLink={`/${entityRegistry.getPathName(EntityType.Mlmodel)}/${urn}`}
+                    titleLink={`/data-catalogue/${entityRegistry.getPathName(EntityType.Mlmodel)}/${urn}`}
                     title={data.mlModel?.name || ''}
                     tabs={getTabs(data.mlModel as MlModel)}
                     header={getHeader(data.mlModel as MlModel)}
