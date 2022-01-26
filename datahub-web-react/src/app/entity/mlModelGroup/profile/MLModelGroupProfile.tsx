@@ -57,7 +57,7 @@ export const MLModelGroupProfile = ({ urn }: { urn: string }): JSX.Element => {
             {loading && <Message type="loading" content="Loading..." style={{ marginTop: '10%' }} />}
             {data && data.mlModelGroup && (
                 <LegacyEntityProfile
-                    titleLink={`/${entityRegistry.getPathName(EntityType.MlmodelGroup)}/${urn}`}
+                    titleLink={`/data-catalogue/${entityRegistry.getPathName(EntityType.MlmodelGroup)}/${urn}`}
                     title={data.mlModelGroup?.name || ''}
                     tabs={getTabs(data.mlModelGroup as MlModelGroup)}
                     header={getHeader(data.mlModelGroup as MlModelGroup)}

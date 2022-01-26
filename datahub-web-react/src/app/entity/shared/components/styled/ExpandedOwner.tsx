@@ -73,7 +73,7 @@ export const ExpandedOwner = ({ entityUrn, owner, refetch }: Props) => {
 
     return (
         <OwnerTag onClose={onClose} closable>
-            <Link to={`/${entityRegistry.getPathName(owner.owner.type)}/${owner.owner.urn}`}>
+            <Link to={`/data-catalogue/${entityRegistry.getPathName(owner.owner.type)}/${owner.owner.urn}`}>
                 <CustomAvatar name={name} photoUrl={pictureLink} useDefaultAvatar={false} />
                 <Tooltip placement="top" title={owner.type}>
                     {name}

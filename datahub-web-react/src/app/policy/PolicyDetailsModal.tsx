@@ -145,7 +145,10 @@ export default function PolicyDetailsModal({ policy, visible, onEdit, onClose, o
                     <Typography.Title level={5}>Applies to Users</Typography.Title>
                     <ThinDivider />
                     {policy.actors.users?.map((userUrn) => (
-                        <Link to={`/${entityRegistry.getPathName(EntityType.CorpUser)}/${userUrn}`} key={userUrn}>
+                        <Link
+                            to={`/data-catalogue/${entityRegistry.getPathName(EntityType.CorpUser)}/${userUrn}`}
+                            key={userUrn}
+                        >
                             <Tag>
                                 <Typography.Text underline>{userUrn}</Typography.Text>
                             </Tag>
@@ -157,7 +160,10 @@ export default function PolicyDetailsModal({ policy, visible, onEdit, onClose, o
                     <Typography.Title level={5}>Applies to Groups</Typography.Title>
                     <ThinDivider />
                     {policy.actors.groups?.map((groupUrn) => (
-                        <Link to={`/${entityRegistry.getPathName(EntityType.CorpGroup)}/${groupUrn}`} key={groupUrn}>
+                        <Link
+                            to={`/data-catalogue/${entityRegistry.getPathName(EntityType.CorpGroup)}/${groupUrn}`}
+                            key={groupUrn}
+                        >
                             <Tag>
                                 <Typography.Text underline>{groupUrn}</Typography.Text>
                             </Tag>

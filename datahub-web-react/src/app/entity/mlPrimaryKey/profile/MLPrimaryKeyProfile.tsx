@@ -18,7 +18,7 @@ export const MLPrimaryKeyProfile = ({ urn }: { urn: string }): JSX.Element => {
 
     return (
         <LegacyEntityProfile
-            titleLink={`/${entityRegistry.getPathName(EntityType.MlprimaryKey)}/${urn}`}
+            titleLink={`/data-catalogue/${entityRegistry.getPathName(EntityType.MlprimaryKey)}/${urn}`}
             title={urn}
             header={<></>}
             onTabChange={(tab: string) => {

@@ -70,7 +70,7 @@ export const ManageAccount = ({ urn: _urn, pictureLink: _pictureLink, name }: Pr
                 );
             })}
             <MenuItem danger key="logout" tabIndex={0}>
-                <a href="/logOut" onClick={handleLogout}>
+                <a href="/data-catalogue/logOut" onClick={handleLogout}>
                     Logout
                 </a>
             </MenuItem>
@@ -79,7 +79,7 @@ export const ManageAccount = ({ urn: _urn, pictureLink: _pictureLink, name }: Pr
 
     return (
         <Dropdown overlay={menu}>
-            <Link to={`/${entityRegistry.getPathName(EntityType.CorpUser)}/${_urn}`}>
+            <Link to={`/data-catalogue/${entityRegistry.getPathName(EntityType.CorpUser)}/${_urn}`}>
                 <CustomAvatar photoUrl={_pictureLink} style={{ marginRight: 5 }} name={name} />
                 <DownArrow />
             </Link>

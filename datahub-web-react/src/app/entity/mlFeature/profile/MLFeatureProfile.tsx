@@ -18,7 +18,7 @@ export const MLFeatureProfile = ({ urn }: { urn: string }): JSX.Element => {
 
     return (
         <LegacyEntityProfile
-            titleLink={`/${entityRegistry.getPathName(EntityType.Mlfeature)}/${urn}`}
+            titleLink={`/data-catalogue/${entityRegistry.getPathName(EntityType.Mlfeature)}/${urn}`}
             title={urn}
             header={<></>}
             onTabChange={(tab: string) => {
