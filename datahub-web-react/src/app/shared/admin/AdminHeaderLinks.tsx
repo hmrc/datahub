@@ -41,7 +41,7 @@ export function AdminHeaderLinks() {
             {showASD && (
                 <AdminLink>
                     <Link to="/">
-                        <Button type="text">Go to Advanced Search & Dashboards</Button>
+                        <Button type="text">Go to Advanced Search and Dashboards</Button>
                     </Link>
                 </AdminLink>
             )}
