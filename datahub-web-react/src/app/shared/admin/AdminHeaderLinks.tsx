@@ -34,9 +34,17 @@ export function AdminHeaderLinks() {
     const showIngestion =
         isIngestionEnabled && me && me.platformPrivileges.manageIngestion && me.platformPrivileges.manageSecrets;
     const showDomains = me?.platformPrivileges?.manageDomains || false;
+    const showASD = true;
 
     return (
         <>
+            {showASD && (
+                <AdminLink>
+                    <Link to="/">
+                        <Button type="text">Go to Advanced Search & Dashboards</Button>
+                    </Link>
+                </AdminLink>
+            )}
             {showAnalytics && (
                 <AdminLink>
                     <Link to="/data-catalogue/analytics">
