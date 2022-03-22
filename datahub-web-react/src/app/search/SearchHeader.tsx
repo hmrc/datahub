@@ -82,7 +82,7 @@ export const SearchHeader = ({
     return (
         <Header style={styles.header as any}>
             <LogoSearchContainer>
-                <Link to="/">
+                <Link to="/data-catalogue">
                     <LogoImage
                         src={
                             appConfig.config !== DEFAULT_APP_CONFIG
