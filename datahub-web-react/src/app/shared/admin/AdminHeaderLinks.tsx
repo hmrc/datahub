@@ -39,7 +39,7 @@ export function AdminHeaderLinks() {
         <>
             {showAnalytics && (
                 <AdminLink>
-                    <Link to="/analytics">
+                    <Link to="/data-catalogue/analytics">
                         <Button type="text">
                             <BarChartOutlined /> Analytics
                         </Button>
@@ -48,7 +48,7 @@ export function AdminHeaderLinks() {
             )}
             {showDomains && (
                 <AdminLink>
-                    <Link to="/domains">
+                    <Link to="/data-catalogue/domains">
                         <Button type="text">
                             <FolderOutlined /> Domains
                         </Button>
@@ -57,7 +57,7 @@ export function AdminHeaderLinks() {
             )}
             {showIdentityManagement && (
                 <AdminLink>
-                    <Link to="/identities">
+                    <Link to="/data-catalogue/identities">
                         <Button type="text">
                             <UsergroupAddOutlined /> Users & Groups
                         </Button>
@@ -66,7 +66,7 @@ export function AdminHeaderLinks() {
             )}
             {showIngestion && (
                 <AdminLink>
-                    <Link to="/ingestion">
+                    <Link to="/data-catalogue/ingestion">
                         <Button type="text">
                             <ApiOutlined /> Ingestion
                         </Button>
@@ -75,7 +75,7 @@ export function AdminHeaderLinks() {
             )}
             {showPolicyBuilder && (
                 <AdminLink>
-                    <Link to="/policies">
+                    <Link to="/data-catalogue/policies">
                         <Button type="text">
                             <BankOutlined /> Policies
                         </Button>
@@ -84,7 +84,7 @@ export function AdminHeaderLinks() {
             )}
             {showSettings && (
                 <AdminLink style={{ marginRight: 16 }}>
-                    <Link to="/settings">
+                    <Link to="/data-catalogue/settings">
                         <Button type="text">
                             <SettingOutlined />
                         </Button>

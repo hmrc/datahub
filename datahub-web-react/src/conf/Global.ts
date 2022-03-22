@@ -5,20 +5,20 @@ export enum PageRoutes {
     /**
      * Server-side authentication route
      */
-    AUTHENTICATE = '/authenticate',
-    LOG_IN = '/login',
-    SEARCH_RESULTS = '/search/:type?',
-    SEARCH = '/search',
-    BROWSE = '/browse',
-    BROWSE_RESULTS = '/browse/:type',
-    DATASETS = '/datasets',
-    ASSETS = '/assets',
-    ANALYTICS = '/analytics',
-    POLICIES = '/policies',
-    IDENTITIES = '/identities',
-    INGESTION = '/ingestion',
-    SETTINGS = '/settings',
-    DOMAINS = '/domains',
+    AUTHENTICATE = '/data-catalogue/authenticate',
+    LOG_IN = '/data-catalogue/login',
+    SEARCH_RESULTS = '/data-catalogue/search/:type?',
+    SEARCH = '/data-catalogue/search',
+    BROWSE = '/data-catalogue/browse',
+    BROWSE_RESULTS = '/data-catalogue/browse/:type',
+    DATASETS = '/data-catalogue/datasets',
+    ASSETS = '/data-catalogue/assets',
+    ANALYTICS = '/data-catalogue/analytics',
+    POLICIES = '/data-catalogue/policies',
+    IDENTITIES = '/data-catalogue/identities',
+    INGESTION = '/data-catalogue/ingestion',
+    SETTINGS = '/data-catalogue/settings',
+    DOMAINS = '/data-catalogue/domains',
 }
 
 /**
