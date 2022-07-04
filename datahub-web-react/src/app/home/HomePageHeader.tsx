@@ -16,6 +16,7 @@ import { EntityType } from '../../types.generated';
 import analytics, { EventType } from '../analytics';
 import { AdminHeaderLinks } from '../shared/admin/AdminHeaderLinks';
 import { ANTD_GRAY } from '../entity/shared/constants';
+import { CIPBetaHomeContainer, CIPBetaText } from '../shared/CIPShared';
 
 const Background = styled.div`
     width: 100%;
@@ -176,13 +177,16 @@ export const HomePageHeader = () => {
     return (
         <Background>
             <Row justify="space-between" style={styles.navBar}>
-                <WelcomeText>
-                    {!!user && (
-                        <>
-                            Welcome back, <b>{entityRegistry.getDisplayName(EntityType.CorpUser, user)}</b>.
-                        </>
-                    )}
-                </WelcomeText>
+                <CIPBetaHomeContainer>
+                    <CIPBetaText>BETA</CIPBetaText>
+                    <WelcomeText>
+                        {!!user && (
+                            <>
+                                Welcome back, <b>{entityRegistry.getDisplayName(EntityType.CorpUser, user)}</b>.
+                            </>
+                        )}
+                    </WelcomeText>
+                </CIPBetaHomeContainer>
                 <NavGroup>
                     <AdminHeaderLinks />
                     <ManageAccount
