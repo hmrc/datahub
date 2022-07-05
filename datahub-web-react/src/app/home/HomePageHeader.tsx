@@ -181,16 +181,13 @@ export const HomePageHeader = () => {
     return (
         <Background>
             <Row justify="space-between" style={styles.navBar}>
-                <CIPBetaHomeContainer>
-                    <CIPBetaText>BETA</CIPBetaText>
-                    <WelcomeText>
-                        {!!user && (
-                            <>
-                                Welcome back, <b>{entityRegistry.getDisplayName(EntityType.CorpUser, user)}</b>.
-                            </>
-                        )}
-                    </WelcomeText>
-                </CIPBetaHomeContainer>
+                <WelcomeText>
+                    {!!user && (
+                        <>
+                            Welcome back, <b>{entityRegistry.getDisplayName(EntityType.CorpUser, user)}</b>.
+                        </>
+                    )}
+                </WelcomeText>
                 <NavGroup>
                     <AdminHeaderLinks />
                     <ManageAccount
