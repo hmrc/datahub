@@ -11,7 +11,6 @@ import { ANTD_GRAY } from '../entity/shared/constants';
 import { AdminHeaderLinks } from '../shared/admin/AdminHeaderLinks';
 import { useAppConfig } from '../useAppConfig';
 import { DEFAULT_APP_CONFIG } from '../../appConfigContext';
-import { CIPBetaText } from '../shared/CIPShared';
 import { CIPBanner, FixedCIPHeader } from '../shared/CIPShared';
 
 const { Header } = Layout;
@@ -104,11 +103,12 @@ export const SearchHeader = ({
                         onSearch={onSearch}
                         onQueryChange={onQueryChange}
                         entityRegistry={entityRegistry}
+                        setIsSearchBarFocused={setIsSearchBarFocused}
                         fixAutoComplete
                     />
                 </LogoSearchContainer>
                 <NavGroup>
-                    <AdminHeaderLinks />
+                    <AdminHeaderLinks areLinksHidden={isSearchBarFocused} />
                     <ManageAccount urn={authenticatedUserUrn} pictureLink={authenticatedUserPictureLink || ''} />
                 </NavGroup>
             </Header>

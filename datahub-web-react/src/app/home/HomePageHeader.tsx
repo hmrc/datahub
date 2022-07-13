@@ -18,7 +18,6 @@ import { AdminHeaderLinks } from '../shared/admin/AdminHeaderLinks';
 import { ANTD_GRAY } from '../entity/shared/constants';
 import { useAppConfig } from '../useAppConfig';
 import { DEFAULT_APP_CONFIG } from '../../appConfigContext';
-import { CIPBetaHomeContainer, CIPBetaText } from '../shared/CIPShared';
 
 const Background = styled.div`
     width: 100%;
