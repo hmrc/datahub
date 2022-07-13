@@ -23,7 +23,7 @@ export enum PageRoutes {
     INGESTION = '/data-catalogue/ingestion',
     SETTINGS = '/data-catalogue/settings',
     DOMAINS = '/data-catalogue/domains',
-    GLOSSARY = '/data-catalogue/glossary'
+    GLOSSARY = '/data-catalogue/glossary',
 }
 
 /**
