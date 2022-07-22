@@ -38,12 +38,21 @@ dependencies {
   play externalDependency.jerseyCore
   play externalDependency.jerseyGuava
 
-  play externalDependency.pac4j
-  play externalDependency.playPac4j
-  play externalDependency.shiroCore
-  play externalDependency.playCache
-  play externalDependency.playWs
-  play externalDependency.kafkaClients
+  implementation(externalDependency.pac4j) {
+    exclude group: "net.minidev", module: "json-smart"
+    exclude group: "com.nimbusds", module: "nimbus-jose-jwt"
+  }
+  implementation "com.nimbusds:nimbus-jose-jwt:7.9"
+  implementation externalDependency.jsonSmart
+  implementation externalDependency.playPac4j
+  implementation externalDependency.shiroCore
+  implementation externalDependency.playCache
+  implementation externalDependency.playEhcache
+  implementation externalDependency.playWs
+  implementation externalDependency.playServer
+  implementation externalDependency.playAkkaHttpServer
+  implementation externalDependency.kafkaClients
+  implementation externalDependency.awsMskIamAuth
 
   playTest externalDependency.mockito
   playTest externalDependency.playTest
