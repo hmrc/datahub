@@ -1,3 +1,8 @@
+# Managing this REPO in CIP
+
+Reference the file CIP_DEVELOPMENT_FLOW.md to make changes to this repository
+
+
 <!--HOSTED_DOCS_ONLY
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
