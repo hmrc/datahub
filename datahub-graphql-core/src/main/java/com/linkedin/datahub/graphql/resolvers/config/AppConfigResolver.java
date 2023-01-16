@@ -16,7 +16,9 @@ import com.linkedin.datahub.graphql.generated.ResourcePrivileges;
 import com.linkedin.datahub.graphql.generated.TelemetryConfig;
 import com.linkedin.datahub.graphql.generated.TestsConfig;
 import com.linkedin.datahub.graphql.generated.VisualConfig;
+import com.linkedin.datahub.graphql.generated.ASDConfig;
 import com.linkedin.metadata.config.DatahubConfiguration;
+import com.linkedin.metadata.config.ASDConfiguration;
 import com.linkedin.metadata.config.IngestionConfiguration;
 import com.linkedin.metadata.config.TestsConfiguration;
 import com.linkedin.metadata.telemetry.TelemetryConfiguration;
@@ -43,6 +45,7 @@ public class AppConfigResolver implements DataFetcher<CompletableFuture<AppConfi
   private final TelemetryConfiguration _telemetryConfiguration;
   private final TestsConfiguration _testsConfiguration;
   private final DatahubConfiguration _datahubConfiguration;
+  private final ASDConfiguration _asdConfiguration;
 
   public AppConfigResolver(
       final GitVersion gitVersion,
@@ -54,7 +57,8 @@ public class AppConfigResolver implements DataFetcher<CompletableFuture<AppConfi
       final VisualConfiguration visualConfiguration,
       final TelemetryConfiguration telemetryConfiguration,
       final TestsConfiguration testsConfiguration,
-      final DatahubConfiguration datahubConfiguration) {
+      final DatahubConfiguration datahubConfiguration,
+      final ASDConfiguration asdConfiguration) {
     _gitVersion = gitVersion;
     _isAnalyticsEnabled = isAnalyticsEnabled;
     _ingestionConfiguration = ingestionConfiguration;
@@ -65,6 +69,7 @@ public class AppConfigResolver implements DataFetcher<CompletableFuture<AppConfi
     _telemetryConfiguration = telemetryConfiguration;
     _testsConfiguration = testsConfiguration;
     _datahubConfiguration = datahubConfiguration;
+    _asdConfiguration = asdConfiguration;
   }
 
   @Override
@@ -126,6 +131,10 @@ public class AppConfigResolver implements DataFetcher<CompletableFuture<AppConfi
     final TestsConfig testsConfig = new TestsConfig();
     testsConfig.setEnabled(_testsConfiguration.isEnabled());
     appConfig.setTestsConfig(testsConfig);
+
+    final ASDConfig asdConfig = new ASDConfig();
+    asdConfig.setUrl(_asdConfiguration.getUrl());
+    appConfig.setAsdConfig(asdConfig);
 
     return CompletableFuture.completedFuture(appConfig);
   }

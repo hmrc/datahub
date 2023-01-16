@@ -249,6 +249,7 @@ import com.linkedin.datahub.graphql.types.schemafield.SchemaFieldType;
 import com.linkedin.datahub.graphql.types.tag.TagType;
 import com.linkedin.datahub.graphql.types.test.TestType;
 import com.linkedin.entity.client.EntityClient;
+import com.linkedin.metadata.config.ASDConfiguration;
 import com.linkedin.metadata.config.DatahubConfiguration;
 import com.linkedin.metadata.config.IngestionConfiguration;
 import com.linkedin.metadata.config.TestsConfiguration;
@@ -328,6 +329,7 @@ public class GmsGraphQLEngine {
     private final TelemetryConfiguration telemetryConfiguration;
     private final TestsConfiguration testsConfiguration;
     private final DatahubConfiguration datahubConfiguration;
+    private final ASDConfiguration asdConfiguration;
 
     private final DatasetType datasetType;
     private final CorpUserType corpUserType;
@@ -394,6 +396,7 @@ public class GmsGraphQLEngine {
         final TimelineService timelineService, final boolean supportsImpactAnalysis,
         final VisualConfiguration visualConfiguration, final TelemetryConfiguration telemetryConfiguration,
         final TestsConfiguration testsConfiguration, final DatahubConfiguration datahubConfiguration,
+        final ASDConfiguration asdConfiguration,
         final SiblingGraphService siblingGraphService, final GroupService groupService, final RoleService roleService,
         final InviteTokenService inviteTokenService, final PostService postService, final FeatureFlags featureFlags) {
 
@@ -425,6 +428,7 @@ public class GmsGraphQLEngine {
         this.telemetryConfiguration = telemetryConfiguration;
         this.testsConfiguration = testsConfiguration;
         this.datahubConfiguration = datahubConfiguration;
+        this.asdConfiguration = asdConfiguration;
         this.featureFlags = featureFlags;
 
         this.datasetType = new DatasetType(entityClient);
@@ -632,7 +636,8 @@ public class GmsGraphQLEngine {
                     this.visualConfiguration,
                     this.telemetryConfiguration,
                     this.testsConfiguration,
-                    this.datahubConfiguration
+                    this.datahubConfiguration,
+                    this.asdConfiguration
             ))
             .dataFetcher("me", new MeResolver(this.entityClient, featureFlags))
             .dataFetcher("search", new SearchResolver(this.entityClient))
