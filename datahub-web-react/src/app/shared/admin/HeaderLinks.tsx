@@ -73,11 +73,14 @@ export function HeaderLinks(props: Props) {
         isIngestionEnabled && me && me.platformPrivileges.manageIngestion && me.platformPrivileges.manageSecrets;
     const showDomains = me?.platformPrivileges.createDomains || me?.platformPrivileges.manageDomains;
     const showASD = true;
+    const root = '/';
+    const cipEnv = window?.location?.hostname?.split('.')[0] || root;
+    const ASDUrl = cipEnv.startsWith('cip-') ? `https://search-${cipEnv}.tax.service.gov.uk` : root;
 
     return (
         <LinksWrapper areLinksHidden={areLinksHidden}>
             {showASD && (
-                <a href="/">
+                <a href={ASDUrl}>
                     <Button type="text">Go to Advanced Search and Dashboards</Button>
                 </a>
             )}
