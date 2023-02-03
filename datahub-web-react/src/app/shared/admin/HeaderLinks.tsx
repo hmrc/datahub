@@ -74,6 +74,7 @@ export function HeaderLinks(props: Props) {
     const showDomains = me?.platformPrivileges.createDomains || me?.platformPrivileges.manageDomains;
     const showASD = true;
     const root = '/';
+    // cipEnv consists of two parts` cip plus with the environment, i.e cip-{ENVIRONMENT} e.g. `cip-qa`, `cip-production`
     const cipEnv = window?.location?.hostname?.split('.')[0] || root;
     const ASDUrl = cipEnv.startsWith('cip-') ? `https://search-${cipEnv}.tax.service.gov.uk` : root;
 
