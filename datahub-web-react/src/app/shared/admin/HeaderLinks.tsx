@@ -72,19 +72,9 @@ export function HeaderLinks(props: Props) {
     const showIngestion =
         isIngestionEnabled && me && me.platformPrivileges.manageIngestion && me.platformPrivileges.manageSecrets;
     const showDomains = me?.platformPrivileges.createDomains || me?.platformPrivileges.manageDomains;
-    const showASD = true;
-    const root = '/';
-    // cipEnv consists of two parts` cip plus with the environment, i.e cip-{ENVIRONMENT} e.g. `cip-qa`, `cip-production`
-    const cipEnv = window?.location?.hostname?.split('.')[0] || root;
-    const ASDUrl = cipEnv.startsWith('cip-') ? `https://search-${cipEnv}.tax.service.gov.uk` : root;
 
     return (
         <LinksWrapper areLinksHidden={areLinksHidden}>
-            {showASD && (
-                <a href={ASDUrl}>
-                    <Button type="text">Go to Advanced Search and Dashboards</Button>
-                </a>
-            )}
             {showAnalytics && (
                 <LinkWrapper>
                     <Link to="/data-catalogue/analytics">
