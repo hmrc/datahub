@@ -19,7 +19,7 @@ import { PageRoutes } from '../../conf/Global';
 const styles = {
     children: {
         flex: '1',
-        marginTop: 100,
+        marginTop: 195,
         display: 'flex',
         flexDirection: 'column' as const,
         maxHeight: 'calc(100vh - 60px)',
