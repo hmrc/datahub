@@ -18,15 +18,12 @@ const CIPBannerBoundary = styled.div`
 `;
 
 const root = '/';
-const cipEnv = window?.location?.hostname?.split('.')[0] || root;
-const ASDUrl = cipEnv.startsWith('cip-') ? `https://search-${cipEnv}.tax.service.gov.uk` : root;
-const SearchURL = cipEnv.startsWith('cip-')
-    ? `https://${cipEnv}.tax.service.gov.uk/txm-digital-persona/`
-    : '/txm-digital-persona/';
-const DataExplorationUrl = cipEnv.startsWith('cip-')
-    ? `https://${cipEnv}.tax.service.gov.uk/data-catalogue`
-    : `/data-catalogue`;
-const ServicePageUrl = cipEnv.startsWith('cip-') ? `https://${cipEnv}.tax.service.gov.uk` : root;
+const hostName = window?.location?.hostname?.split('.')[0] || root;
+const cipEnv = hostName.split('-').pop();
+const ASDUrl = hostName.startsWith('cip-') ? `https://search-cip-${cipEnv}.tax.service.gov.uk` : root;
+const ServicePageUrl = hostName.startsWith('cip-') ? `https://cip-${cipEnv}.tax.service.gov.uk` : root;
+const SearchURL = ServicePageUrl === root ? `/txm-digital-persona/` : `${ServicePageUrl}/txm-digital-persona/`;
+const DataExplorationUrl = window?.location?.href;
 
 export const CommonHeader = () => {
     return (
