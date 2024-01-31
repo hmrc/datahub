@@ -1,5 +1,4 @@
 repoVisibility: public_0C3F0CE3E6E6448FAD341E7BFA50FCD333E06A20CFF05FCACE61154DDBBADF71
-
 leakDetectionExemptions:
   - ruleId: 'cert_1'
     filePaths:
@@ -16,3 +15,4 @@ leakDetectionExemptions:
   - ruleId: 'play_http_secret_key'
     filePath: '/datahub-frontend/conf/application.conf'
     text: 'play.http.secret.key'
+description: The Metadata Platform for the Modern Data Stack
