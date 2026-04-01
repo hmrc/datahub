@@ -151,6 +151,8 @@
     },
     "resolutions": {
         "@ant-design/colors": "6.0.0",
+        "axios": "0.21.4",
+        "axios-retry": "3.1.9",
         "refractor": "3.3.1"
     }
 }
